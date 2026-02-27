@@ -1,21 +1,20 @@
 # TASKS - Shopify App V1.0
 
 ## Backlog
-- [ ] 明确 V1 数据模型（店铺、商品、揽品、订单、履约、回调日志）
 - [ ] 输出 App ↔ ERP 接口契约（request/response/error code）
 - [ ] 设计 Shopify Webhook 事件与幂等策略
-- [ ] 初始化后端工程（NestJS + Prisma + BullMQ）
-- [ ] 初始化前端工程（React + Polaris + App Bridge）
 - [ ] 配置本地/测试环境（PostgreSQL、Redis、Nginx、Docker Compose）
 - [ ] 建立日志、监控与告警最小闭环
 
 ## In Progress
-- [ ] 设计 Shopify Webhook 事件与幂等策略
+- [ ] Shopify OAuth 模块骨架
 
 ## Done
 - [x] 梳理 V1.0 模块边界与接口边界（基于项目文档截图）
 - [x] 文档初始化（PROJECT.md / TASKS.md / ADR）
 - [x] 初始化工程骨架（NestJS API + React/Polaris Web + Docker Compose）
+- [x] 初始化用户认证（注册/登录 API + 前端页面）
+- [x] 初始化 Prisma 数据模型（User）
 
 ## Decisions Pending
 - [ ] Shopify 嵌入式 App 框架选型（Remix / Next.js）
