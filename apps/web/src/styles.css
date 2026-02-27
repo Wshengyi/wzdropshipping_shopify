@@ -26,10 +26,21 @@ body {
 }
 
 .brand {
-  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--brand-300);
   margin-bottom: 42px;
+}
+
+.brand-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid var(--border-soft);
 }
 
 .hero-panel h1 {
@@ -92,6 +103,20 @@ body {
   border: 1px solid var(--border-strong);
   padding: 26px;
   box-shadow: var(--shadow-elevated);
+}
+
+.auth-logo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.auth-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid var(--border-soft);
 }
 
 .tabs {

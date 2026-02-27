@@ -110,7 +110,10 @@ function AuthPage() {
   return (
     <div className="auth-layout">
       <section className="hero-panel">
-        <div className="brand">WZ Dropshipping</div>
+        <div className="brand">
+          <img src="/logo.jpg" alt="WZSHOP" className="brand-logo" />
+          <span>WZ Dropshipping</span>
+        </div>
         <h1>
           Start dropshipping smoothly <span>from day one</span>
         </h1>
@@ -134,6 +137,10 @@ function AuthPage() {
 
       <section className="form-panel">
         <div className="auth-card">
+          <div className="auth-logo-wrap">
+            <img src="/logo.jpg" alt="WZSHOP" className="auth-logo" />
+          </div>
+
           <div className="tabs">
             <button className={mode === 'login' ? 'tab active' : 'tab'} onClick={() => setMode('login')}>
               登录
