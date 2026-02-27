@@ -1,5 +1,10 @@
 :root {
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --brand-500: #2754a7;
+  --brand-400: #3d6bc3;
+  --brand-300: #5f86d4;
+  --brand-200: #8ca8e3;
+  --brand-100: #d8e2f8;
 }
 
 * {
@@ -9,7 +14,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at 10% 10%, #0f3f3f, #05151a 60%, #03070a 100%);
+  background: radial-gradient(circle at 10% 10%, #1c2f57, #0d1730 60%, #03070a 100%);
   color: #e9f3f3;
 }
 
@@ -21,14 +26,14 @@ body {
 
 .hero-panel {
   padding: 72px 64px;
-  background: linear-gradient(135deg, rgba(18, 78, 72, 0.65), rgba(8, 25, 36, 0.45));
+  background: linear-gradient(135deg, rgba(39, 84, 167, 0.45), rgba(13, 23, 48, 0.6));
   border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .brand {
   font-size: 28px;
   font-weight: 700;
-  color: #5af4c7;
+  color: var(--brand-300);
   margin-bottom: 42px;
 }
 
@@ -40,7 +45,7 @@ body {
 }
 
 .hero-panel h1 span {
-  color: #5af4c7;
+  color: var(--brand-300);
 }
 
 .hero-panel > p {
@@ -67,7 +72,7 @@ body {
 .feature-card h3 {
   margin: 0 0 6px;
   font-size: 17px;
-  color: #d8fbf0;
+  color: var(--brand-100);
 }
 
 .feature-card p {
@@ -112,9 +117,9 @@ body {
 }
 
 .tab.active {
-  background: rgba(90, 244, 199, 0.16);
-  border-color: rgba(90, 244, 199, 0.68);
-  color: #dffcf3;
+  background: rgba(61, 107, 195, 0.2);
+  border-color: rgba(95, 134, 212, 0.8);
+  color: var(--brand-100);
 }
 
 .field-wrap {
@@ -147,15 +152,15 @@ body {
 }
 
 .auth-card .Polaris-Button--variantPrimary {
-  background: linear-gradient(90deg, #35e3b7, #5af4c7);
-  color: #02251d;
+  background: linear-gradient(90deg, var(--brand-400), var(--brand-300));
+  color: #0f2347;
   border: none;
   font-weight: 700;
 }
 
 .policy-page {
   min-height: 100vh;
-  background: radial-gradient(circle at 10% 10%, #143d3f, #07111a 70%, #03070a 100%);
+  background: radial-gradient(circle at 10% 10%, #284f96, #0d1730 70%, #03070a 100%);
   padding: 38px 16px;
   display: flex;
   justify-content: center;
