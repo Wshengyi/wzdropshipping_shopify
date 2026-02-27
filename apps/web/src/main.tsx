@@ -182,8 +182,8 @@ function AuthPage() {
             />
           </div>
 
-          {mode === 'register' ? (
-            <div className="agree-wrap">
+          <div className="agree-wrap">
+            {mode === 'register' ? (
               <Checkbox
                 label={
                   <span>
@@ -193,8 +193,12 @@ function AuthPage() {
                 checked={agreeAgreements}
                 onChange={setAgreeAgreements}
               />
-            </div>
-          ) : null}
+            ) : (
+              <span>
+                登录即表示你同意 <Link url="/terms" target="_blank">《用户协议》</Link> 和 <Link url="/privacy" target="_blank">《隐私协议》</Link>
+              </span>
+            )}
+          </div>
 
           <Button fullWidth size="large" variant="primary" loading={loading} onClick={submit} disabled={!canSubmit}>
             {mode === 'login' ? 'Log in' : 'Sign up'}
