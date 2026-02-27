@@ -13,10 +13,6 @@ export class RegisterDto {
   name?: string;
 
   @IsBoolean()
-  @Equals(true, { message: '必须同意用户协议' })
-  termsAccepted!: boolean;
-
-  @IsBoolean()
-  @Equals(true, { message: '必须同意隐私协议' })
-  privacyAccepted!: boolean;
+  @Equals(true, { message: '必须同意《用户协议》和《隐私协议》' })
+  agreementsAccepted!: boolean;
 }

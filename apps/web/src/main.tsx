@@ -59,17 +59,16 @@ function AuthPage() {
   const [mode, setMode] = useState<'login' | 'register'>('login');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [agreeTerms, setAgreeTerms] = useState(false);
-  const [agreePrivacy, setAgreePrivacy] = useState(false);
+  const [agreeAgreements, setAgreeAgreements] = useState(false);
   const [message, setMessage] = useState('');
   const [isError, setIsError] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const canSubmit = useMemo(() => {
     if (!email || password.length < 6) return false;
-    if (mode === 'register') return agreeTerms && agreePrivacy;
+    if (mode === 'register') return agreeAgreements;
     return true;
-  }, [email, password, mode, agreeTerms, agreePrivacy]);
+  }, [email, password, mode, agreeAgreements]);
 
   const submit = async () => {
     setLoading(true);
@@ -80,7 +79,7 @@ function AuthPage() {
       const endpoint = mode === 'register' ? 'auth/register' : 'auth/login';
       const payload =
         mode === 'register'
-          ? { email, password, termsAccepted: agreeTerms, privacyAccepted: agreePrivacy }
+          ? { email, password, agreementsAccepted: agreeAgreements }
           : { email, password };
 
       const res = await fetch(`${API_BASE}/${endpoint}`, {
@@ -98,8 +97,7 @@ function AuthPage() {
       if (mode === 'register') {
         setMode('login');
         setPassword('');
-        setAgreeTerms(false);
-        setAgreePrivacy(false);
+        setAgreeAgreements(false);
       }
     } catch (e) {
       setIsError(true);
@@ -182,20 +180,11 @@ function AuthPage() {
               <Checkbox
                 label={
                   <span>
-                    我已阅读并同意 <Link url="/terms" target="_blank">《用户协议》</Link>
+                    我已阅读并同意 <Link url="/terms" target="_blank">《用户协议》</Link> 和 <Link url="/privacy" target="_blank">《隐私协议》</Link>
                   </span>
                 }
-                checked={agreeTerms}
-                onChange={setAgreeTerms}
-              />
-              <Checkbox
-                label={
-                  <span>
-                    我已阅读并同意 <Link url="/privacy" target="_blank">《隐私协议》</Link>
-                  </span>
-                }
-                checked={agreePrivacy}
-                onChange={setAgreePrivacy}
+                checked={agreeAgreements}
+                onChange={setAgreeAgreements}
               />
             </div>
           ) : null}
