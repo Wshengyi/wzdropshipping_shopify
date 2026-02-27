@@ -1,0 +1,203 @@
+:root {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 10% 10%, #0f3f3f, #05151a 60%, #03070a 100%);
+  color: #e9f3f3;
+}
+
+.auth-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.hero-panel {
+  padding: 72px 64px;
+  background: linear-gradient(135deg, rgba(18, 78, 72, 0.65), rgba(8, 25, 36, 0.45));
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand {
+  font-size: 28px;
+  font-weight: 700;
+  color: #5af4c7;
+  margin-bottom: 42px;
+}
+
+.hero-panel h1 {
+  font-size: 44px;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  max-width: 560px;
+}
+
+.hero-panel h1 span {
+  color: #5af4c7;
+}
+
+.hero-panel > p {
+  color: rgba(230, 245, 245, 0.82);
+  max-width: 600px;
+  font-size: 17px;
+  margin-bottom: 28px;
+}
+
+.feature-grid {
+  display: grid;
+  gap: 14px;
+  max-width: 620px;
+}
+
+.feature-card {
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.feature-card h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  color: #d8fbf0;
+}
+
+.feature-card p {
+  margin: 0;
+  color: rgba(228, 245, 242, 0.78);
+  font-size: 14px;
+}
+
+.form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+  background: rgba(3, 8, 12, 0.8);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 20px;
+  background: rgba(9, 15, 23, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 26px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.tab {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.75);
+  border-radius: 999px;
+  padding: 9px 0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tab.active {
+  background: rgba(90, 244, 199, 0.16);
+  border-color: rgba(90, 244, 199, 0.68);
+  color: #dffcf3;
+}
+
+.field-wrap {
+  margin-bottom: 12px;
+}
+
+.field-wrap .Polaris-TextField {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.field-wrap .Polaris-TextField__Input {
+  color: #eff8f7;
+}
+
+.field-wrap .Polaris-TextField__Input::placeholder {
+  color: rgba(218, 234, 232, 0.5);
+}
+
+.agree-wrap {
+  margin: 8px 0 14px;
+  display: grid;
+  gap: 6px;
+  color: rgba(221, 242, 240, 0.9);
+}
+
+.banner-wrap {
+  margin-bottom: 12px;
+}
+
+.auth-card .Polaris-Button--variantPrimary {
+  background: linear-gradient(90deg, #35e3b7, #5af4c7);
+  color: #02251d;
+  border: none;
+  font-weight: 700;
+}
+
+.policy-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at 10% 10%, #143d3f, #07111a 70%, #03070a 100%);
+  padding: 38px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.policy-card {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(13, 22, 34, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  color: #e5f2f2;
+}
+
+.policy-card h1 {
+  margin-top: 0;
+}
+
+.policy-card h3 {
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+.policy-meta {
+  color: rgba(215, 231, 231, 0.7);
+}
+
+@media (max-width: 980px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-panel {
+    padding: 30px 22px;
+  }
+
+  .hero-panel h1 {
+    font-size: 30px;
+  }
+
+  .form-panel {
+    padding: 18px;
+  }
+}
