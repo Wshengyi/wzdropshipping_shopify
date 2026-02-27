@@ -10,10 +10,12 @@
 - [ ] 建立日志、监控与告警最小闭环
 
 ## In Progress
-- [ ] 文档初始化（PROJECT.md / TASKS.md / ADR）
+- [ ] 设计 Shopify Webhook 事件与幂等策略
 
 ## Done
 - [x] 梳理 V1.0 模块边界与接口边界（基于项目文档截图）
+- [x] 文档初始化（PROJECT.md / TASKS.md / ADR）
+- [x] 初始化工程骨架（NestJS API + React/Polaris Web + Docker Compose）
 
 ## Decisions Pending
 - [ ] Shopify 嵌入式 App 框架选型（Remix / Next.js）

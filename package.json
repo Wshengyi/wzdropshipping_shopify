@@ -1,0 +1,13 @@
+{
+  "name": "shopify-app-v1",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run start:dev -w @wz/api",
+    "dev:web": "npm run dev -w @wz/web",
+    "build": "npm run build -w @wz/api && npm run build -w @wz/web"
+  }
+}
