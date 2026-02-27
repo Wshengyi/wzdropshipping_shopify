@@ -89,9 +89,9 @@ body {
 
 .form-panel {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 46px;
+  padding: 26px 46px 46px;
   background: radial-gradient(circle at 20% 15%, #3e1f8d, #27115f 60%, #1d0c4c 100%);
 }
 
