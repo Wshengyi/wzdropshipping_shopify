@@ -9,33 +9,48 @@ import {
   Button,
   BlockStack,
   InlineStack,
+  Banner,
 } from '@shopify/polaris';
 
-const API_BASE = 'http://localhost:3000/api';
+const API_BASE = 'https://shopify.firstdemo.cn/api';
 
 function App() {
-  const [mode, setMode] = useState<'login' | 'register'>('register');
+  const [mode, setMode] = useState<'login' | 'register'>('login');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [result, setResult] = useState('');
+  const [message, setMessage] = useState('');
+  const [isError, setIsError] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const submit = async () => {
     setLoading(true);
-    setResult('');
+    setMessage('');
+    setIsError(false);
+
     try {
       const endpoint = mode === 'register' ? 'auth/register' : 'auth/login';
       const res = await fetch(`${API_BASE}/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(mode === 'register' ? { email, password, name } : { email, password }),
+        body: JSON.stringify({ email, password }),
       });
+
       const data = await res.json();
-      if (!res.ok) throw new Error(data.message || '请求失败');
-      setResult(`成功：${JSON.stringify(data, null, 2)}`);
+      if (!res.ok) throw new Error(data?.message || '请求失败');
+
+      if (data?.accessToken) {
+        localStorage.setItem('accessToken', data.accessToken);
+      }
+
+      setMessage(mode === 'register' ? '注册成功，请登录。' : '登录成功。');
+
+      if (mode === 'register') {
+        setMode('login');
+        setPassword('');
+      }
     } catch (e) {
-      setResult(`失败：${(e as Error).message}`);
+      setIsError(true);
+      setMessage((e as Error).message || '请求失败');
     } finally {
       setLoading(false);
     }
@@ -47,36 +62,50 @@ function App() {
         <Card>
           <BlockStack gap="400">
             <Text as="h2" variant="headingMd">
-              {mode === 'register' ? '注册' : '登录'}（V1 起步版）
+              {mode === 'login' ? '邮箱登录' : '邮箱注册'}
             </Text>
+
             <InlineStack gap="200">
-              <Button pressed={mode === 'register'} onClick={() => setMode('register')}>
-                注册
-              </Button>
               <Button pressed={mode === 'login'} onClick={() => setMode('login')}>
                 登录
               </Button>
+              <Button pressed={mode === 'register'} onClick={() => setMode('register')}>
+                注册
+              </Button>
             </InlineStack>
 
-            {mode === 'register' && (
-              <TextField label="姓名" autoComplete="name" value={name} onChange={setName} />
-            )}
-            <TextField label="邮箱" autoComplete="email" value={email} onChange={setEmail} />
+            {message ? (
+              <Banner title={isError ? '操作失败' : '操作成功'} tone={isError ? 'critical' : 'success'}>
+                <p>{message}</p>
+              </Banner>
+            ) : null}
+
+            <TextField
+              label="邮箱"
+              type="email"
+              autoComplete="email"
+              value={email}
+              onChange={setEmail}
+              placeholder="you@example.com"
+            />
+
             <TextField
               label="密码"
               type="password"
               autoComplete="current-password"
               value={password}
               onChange={setPassword}
+              placeholder="至少 6 位"
             />
-            <Button variant="primary" loading={loading} onClick={submit}>
-              提交
+
+            <Button
+              variant="primary"
+              loading={loading}
+              onClick={submit}
+              disabled={!email || password.length < 6}
+            >
+              {mode === 'login' ? '登录' : '注册'}
             </Button>
-            {result && (
-              <Text as="pre" variant="bodySm">
-                {result}
-              </Text>
-            )}
           </BlockStack>
         </Card>
       </Page>
