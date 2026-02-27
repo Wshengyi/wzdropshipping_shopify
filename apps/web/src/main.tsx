@@ -111,7 +111,7 @@ function AuthPage() {
   return (
     <div className="auth-layout">
       <section className="hero-panel">
-        <div className="brand">WZ Lite</div>
+        <div className="brand">WZ Dropshipping</div>
         <h1>
           Start dropshipping smoothly <span>from day one</span>
         </h1>
