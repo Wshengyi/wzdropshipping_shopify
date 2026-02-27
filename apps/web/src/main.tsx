@@ -66,14 +66,20 @@ function AuthPage() {
 
   const canSubmit = useMemo(() => {
     if (!email || password.length < 6) return false;
-    if (mode === 'register') return agreeAgreements;
     return true;
-  }, [email, password, mode, agreeAgreements]);
+  }, [email, password]);
 
   const submit = async () => {
-    setLoading(true);
     setMessage('');
     setIsError(false);
+
+    if (mode === 'register' && !agreeAgreements) {
+      setIsError(true);
+      setMessage('注册前请先勾选并同意《用户协议》和《隐私协议》');
+      return;
+    }
+
+    setLoading(true);
 
     try {
       const endpoint = mode === 'register' ? 'auth/register' : 'auth/login';
