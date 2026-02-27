@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { AppProvider, Banner, Button, Checkbox, Link, TextField } from '@shopify/polaris';
 import '@shopify/polaris/build/esm/styles.css';
+import './tokens.css';
 import './styles.css';
 
 const API_BASE = 'https://shopify.firstdemo.cn/api';
