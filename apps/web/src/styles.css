@@ -9,8 +9,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at 10% 10%, var(--ink-600), var(--ink-800) 60%, var(--ink-900) 100%);
-  color: var(--text-primary);
+  background: radial-gradient(circle at 12% 10%, #f3f7ff, #e9f0ff 55%, #dfe9ff 100%);
+  color: #1a2b4f;
 }
 
 .auth-layout {
@@ -21,8 +21,8 @@ body {
 
 .hero-panel {
   padding: 72px 64px;
-  background: linear-gradient(135deg, rgba(39, 84, 167, 0.45), rgba(13, 23, 48, 0.6));
-  border-right: 1px solid var(--border-soft);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(226, 236, 255, 0.85));
+  border-right: 1px solid rgba(39, 84, 167, 0.14);
 }
 
 .brand {
@@ -70,8 +70,8 @@ body {
 .feature-card {
   padding: 18px 20px;
   border-radius: 14px;
-  background: var(--surface-glass);
-  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(39, 84, 167, 0.14);
   backdrop-filter: blur(6px);
 }
 
@@ -83,7 +83,7 @@ body {
 
 .feature-card p {
   margin: 0;
-  color: rgba(228, 245, 242, 0.78);
+  color: rgba(32, 58, 107, 0.78);
   font-size: 14px;
 }
 
@@ -91,18 +91,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 36px;
-  background: var(--surface-panel);
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.45);
 }
 
 .auth-card {
   width: 100%;
-  max-width: 460px;
-  border-radius: 20px;
-  background: var(--surface-card);
-  border: 1px solid var(--border-strong);
-  padding: 26px;
-  box-shadow: var(--shadow-elevated);
+  max-width: 560px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(39, 84, 167, 0.18);
+  padding: 34px;
+  box-shadow: 0 24px 60px rgba(39, 84, 167, 0.18);
 }
 
 .auth-logo-wrap {
@@ -148,16 +148,16 @@ body {
 
 .field-wrap .Polaris-TextField {
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.14);
+  background: #ffffff;
+  border-color: rgba(39, 84, 167, 0.26);
 }
 
 .field-wrap .Polaris-TextField__Input {
-  color: #eff8f7;
+  color: #1d3567;
 }
 
 .field-wrap .Polaris-TextField__Input::placeholder {
-  color: rgba(218, 234, 232, 0.5);
+  color: rgba(61, 107, 195, 0.45);
 }
 
 .agree-wrap {
